@@ -1,7 +1,7 @@
-# how to run
+# how to deploy
 
-- npm install
-- npm start
+- docker build --tag sejutacita-test .
+- docker run -d --name sejutacita-test -p 9000:9000 sejutacita-test -e PORT=9000
 
 ## User account
 
