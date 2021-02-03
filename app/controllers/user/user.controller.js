@@ -46,7 +46,6 @@ class UserController {
             return res.status(404).send({message: "Invalid Request"})
         try {
             const user = await User.findById(req.params.id)
-            console.log(user)
             user.username = username
             await user.save()
 
@@ -65,13 +64,12 @@ class UserController {
             return res.status(404).send({message: "Invalid Request"})
 
         try {
-            const user = await User.findById(req.params.id).remove()
+            await User.deleteOne({_id: req.params.id})
             return res.send({
                 status: true,
                 message: "Delete user success"
             });
         } catch (error) {
-            console.log(error)
             return res.status(500).send({message: "Failed to delete user"});
         }
     }
