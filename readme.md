@@ -3,6 +3,7 @@
 - docker pull node
 - docker build --tag sejutacita-test .
 - docker-compose up -d
+- kubectl create -f deployk8s.yml
 
 ## User account
 
